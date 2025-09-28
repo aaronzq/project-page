@@ -1,0 +1,153 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(12, 12, 12);
+    margin: 0rem;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+#image-track {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 4vmin; /* Space between items, vmin means viewport minimum, 1vmin = 1% of the viewport's min(height, width) */
+    position: absolute;
+    left: 50%; /*position the element relative to its containing block.*/
+    top: 50%;
+    width: 50vw; /*50% of the viewport width*/
+    max-width: 800px; /* Set your desired maximum width */
+    transform: translate(-50%, 0%); /*moves the element relative to its current position. e.g. X-axis shifts the image-track left by 50% of its own width*/
+}
+
+#image-track .image {
+    width: 100%;
+    aspect-ratio: 7 / 3;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    object-position: 50% 100%; /* Center the image */
+}
+
+#image-track .image.dimmed {
+    filter: brightness(0.3);
+    transition: filter 0.5s;
+}
+
+.content-display {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70vw;
+    height: 90vh;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    scrollbar-width: thin;
+    padding-right: 5px;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    /* Add smooth transitions */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    transform: translateY(-50%) translateX(20px); /* Start slightly offset */
+}
+
+.content-display-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1000px; /* Set your desired maximum width */
+    height: 100%;
+    text-align: center;
+}
+
+.content-display.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable pointer events when active */
+    transform: translateY(-50%) translateX(0); /* Slide in smoothly */
+}
+
+.content-display img {
+    max-width: 100%;
+    /* max-height: 10vh; */
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.content-display video {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 5px;
+}
+
+.content-display h2 {
+    margin: 0 0 10px 0;
+    color: #dcdcdc;
+    text-align: center;
+    font-family: 'SF Pro Display', 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 200;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+}
+
+.content-display p {
+    color: #dcdcdc;
+    text-align: justify;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.75rem, 1.5vw, 1.5rem);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+}
+
+#close-button {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70vw;
+    height: 90vh;  
+    /* z-index: 1001; */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Allow clicks to pass through */
+        /* Add smooth transitions for close button */
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#close-button.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable pointer events when active */
+}
+
+.close-btn {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #cccccc;
+    transform: scale(1.2);
+}
+
+.close-btn i {
+    pointer-events: none;
+}
