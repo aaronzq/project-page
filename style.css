@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     background-color: rgb(12, 12, 12);
     margin: 0rem;
     overflow: hidden; /* Prevent scrollbars from appearing */
