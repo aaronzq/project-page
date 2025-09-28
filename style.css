@@ -36,7 +36,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 70vw;
-    height: 90vh;
+    height: 80vh;
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -111,7 +111,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 70vw;
-    height: 90vh;  
+    height: 80vh;  
     /* z-index: 1001; */
     opacity: 0;
     visibility: hidden;
