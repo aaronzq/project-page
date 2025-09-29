@@ -8,8 +8,16 @@ let prevPercentage = 0;
 const contentTemplates = {
     'content-1': `
         <h2>Photos of Optical Setups</h2>
+        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
         <img src="projects/optics-photography/page1.png">
         <p></p>
+        <img src="projects/optics-photography/page2.png">
+        <p></p>
+        <img src="projects/optics-photography/page3.png">
+        <p></p>
+        <img src="projects/optics-photography/page4.png">
+        <p></p>
+        <img src="projects/optics-photography/page5.png">
     `,
     'content-2': `
         <h2>Shoot a videography of setup mocking ads</h2>
