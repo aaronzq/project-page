@@ -115,7 +115,7 @@ window.addEventListener("touchmove", (e) => {
     
     const touchEndY = e.touches[0].clientY; // Current Y position
     const deltaY = -touchStartY + touchEndY; // Calculate the drag distance
-    const deltaPercentage = (deltaY / window.innerHeight) * 100 * 3; // Convert drag distance to percentage
+    const deltaPercentage = (deltaY / window.innerHeight) * 100 * 1.25; // Convert drag distance to percentage
     const percentage = Math.max(Math.min(prevPercentage + deltaPercentage, 0), -100);
 
     prevPercentage = percentage;
