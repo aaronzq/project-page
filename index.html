@@ -12,7 +12,35 @@
 </head>
 <body>
 
-    <div id="image-track">
+    <!-- Splash Screen -->
+    <div class="splash-screen">
+        <div class="splash-content">
+            <div class="text-content">
+                <!-- <h1 class="splash-title">Welcome</h1> -->
+                <p class="splash-subtitle">Here lies a gallery of my toy projects, silent, unnoticed, perhaps meaningless. </p>
+                <p class="splash-subtitle">They are used here to learn making a portfolio page from inspiring references 
+                    (ref.<a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://camillemormal.com/">1</a>,
+                    <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=PkADl0HubMY&t=65s">2</a>,
+                    <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://aristidebenoist.com/">3</a>). </p>
+                <p class="splash-subtitle"> I even took a serious selfie. </p>
+
+                <p class="splash-subtitle">Back to <a href="https://aaronzq.github.io/" style="color: rgb(255, 255, 255); text-decoration: underline;">main page</a>.</p>
+            </div>
+            <div class="profile-picture">
+                <img src="assets/profile-picture.jpg" alt="Profile Picture">
+            </div>
+
+
+        </div>
+        <div class="scroll-indicator">
+            <p class="scroll-text">Scroll down to continue</p>
+            <div class="scroll-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Main Content (existing gallery) -->
+    <div class="main-content">
+        <div id="image-track">
         <img class="image" src="projects/optics-photography/IMG_7833.jpg" draggable="false" data-content="content-1"/>
         <img class="image" src="projects/optics-cinematography/coverpage.jpg" draggable="false" data-content="content-2"/>
         <img class="image" src="IMG_7861-Enhanced-NR.jpg" draggable="false" data-content="content-3" />
@@ -50,6 +78,7 @@
         <div class="content-display-block">
             <!-- Content will be loaded here dynamically -->
         </div>
+    </div>
     </div>
 
     <script src="script.js"></script>

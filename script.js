@@ -1,3 +1,77 @@
+// Splash screen functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const splashScreen = document.querySelector('.splash-screen');
+    const mainContent = document.querySelector('.main-content');
+    let hasScrolled = false;
+    let splashTouchStartY = 0;
+    let splashTouchEndY = 0;
+
+    // Function to hide splash and show main content
+    function enterMainContent() {
+        if (hasScrolled) return;
+        hasScrolled = true;
+        
+        splashScreen.classList.add('hidden');
+        mainContent.classList.add('visible');
+    }
+
+    // Mouse wheel event for splash screen
+    function handleSplashWheel(e) {
+        if (!hasScrolled && e.deltaY > 0) {
+            enterMainContent();
+        }
+    }
+
+    // Touch events for splash screen (mobile)
+    function handleSplashTouchStart(e) {
+        if (!hasScrolled) {
+            splashTouchStartY = e.touches[0].clientY;
+        }
+    }
+
+    function handleSplashTouchEnd(e) {
+        if (!hasScrolled) {
+            splashTouchEndY = e.changedTouches[0].clientY;
+            
+            // Check if user swiped down
+            if (splashTouchStartY > splashTouchEndY && (splashTouchStartY - splashTouchEndY) > 50) {
+                enterMainContent();
+            }
+        }
+    }
+
+    // Keyboard event for splash screen (optional - arrow down or space)
+    function handleSplashKeydown(e) {
+        if (!hasScrolled && (e.key === 'ArrowDown' || e.key === ' ')) {
+            e.preventDefault();
+            enterMainContent();
+        }
+    }
+
+    // Add event listeners for splash screen
+    window.addEventListener('wheel', handleSplashWheel);
+    window.addEventListener('touchstart', handleSplashTouchStart);
+    window.addEventListener('touchend', handleSplashTouchEnd);
+    window.addEventListener('keydown', handleSplashKeydown);
+
+    // Remove splash event listeners and add gallery event listeners after splash is hidden
+    splashScreen.addEventListener('transitionend', function() {
+        if (hasScrolled) {
+            window.removeEventListener('wheel', handleSplashWheel);
+            window.removeEventListener('touchstart', handleSplashTouchStart);
+            window.removeEventListener('touchend', handleSplashTouchEnd);
+            window.removeEventListener('keydown', handleSplashKeydown);
+            
+            // Add gallery event listeners
+            window.addEventListener("wheel", handleGalleryWheel);
+            window.addEventListener("touchstart", handleGalleryTouchStart);
+            window.addEventListener("touchmove", handleGalleryTouchMove);
+            window.addEventListener("touchend", handleGalleryTouchEnd);
+        }
+    });
+});
+
+// Gallery functionality (existing code with function wrappers)
 const track = document.getElementById("image-track");
 const images = track.getElementsByClassName("image");
 
@@ -69,18 +143,16 @@ function isInsideContentDisplay(e) {
     return clientX >= rect.left;
 }
 
-// Handle mouse wheel event
-window.addEventListener("wheel", (e) => {
+// Handle mouse wheel event for gallery
+function handleGalleryWheel(e) {
     // Don't handle wheel event if inside active content display
     if (isInsideContentDisplay(e)) return;
     
-    const deltaPercentage = e.deltaY / 100 * 5; // Amount of vertical scroll (positive or negative)
+    const deltaPercentage = -e.deltaY / 100 * 5; // Amount of vertical scroll (positive or negative)
     const percentage = Math.max(Math.min(prevPercentage + deltaPercentage, 0), -100);
 
     prevPercentage = percentage;
     console.log(`Mouse wheel delta: ${percentage}`);
-
-
 
     // Use the updated prevPercentage to trigger your animations or logic  
     track.animate({
@@ -97,19 +169,19 @@ window.addEventListener("wheel", (e) => {
         img.classList.remove("dimmed");
     }
 
-        // Hide all content divs when scrolling
+    // Hide all content divs when scrolling
     hideAllContentDivs();
-});
+}
 
-// Handle touch events
-window.addEventListener("touchstart", (e) => {
+// Handle touch events for gallery
+function handleGalleryTouchStart(e) {
     // Don't handle touch event if inside active content display
     if (isInsideContentDisplay(e)) return;
     
     touchStartY = e.touches[0].clientY; // Record the starting Y position
-});
+}
 
-window.addEventListener("touchmove", (e) => {
+function handleGalleryTouchMove(e) {
     // Don't handle touch event if inside active content display
     if (isInsideContentDisplay(e)) return;
     
@@ -137,11 +209,11 @@ window.addEventListener("touchmove", (e) => {
     }
 
     hideAllContentDivs();
-});
+}
 
-window.addEventListener("touchend", () => {
+function handleGalleryTouchEnd() {
     // console.log("Touch drag ended");
-});
+}
 
 // Add click event listener to each image
 for (const image of images) {
