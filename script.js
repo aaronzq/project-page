@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.querySelector('.splash-screen');
     const mainContent = document.querySelector('.main-content');
+    const backToSplashBtn = document.getElementById('back-to-splash');
     let hasScrolled = false;
     let splashTouchStartY = 0;
     let splashTouchEndY = 0;
@@ -13,7 +14,67 @@ document.addEventListener('DOMContentLoaded', function() {
         
         splashScreen.classList.add('hidden');
         mainContent.classList.add('visible');
+        
+        // Show back button after entering main content
+        setTimeout(() => {
+            backToSplashBtn.classList.add('visible');
+        }, 500);
     }
+
+    // Function to go back to splash screen
+    function backToSplash() {
+        hasScrolled = false;
+        
+        // Hide back button
+        backToSplashBtn.classList.remove('visible');
+        
+        // Hide main content and show splash
+        mainContent.classList.remove('visible');
+        splashScreen.classList.remove('hidden');
+        
+        // Reset gallery state
+        resetGalleryState();
+        
+        // Remove gallery event listeners
+        window.removeEventListener("wheel", handleGalleryWheel);
+        window.removeEventListener("touchstart", handleGalleryTouchStart);
+        window.removeEventListener("touchmove", handleGalleryTouchMove);
+        window.removeEventListener("touchend", handleGalleryTouchEnd);
+        
+        // Add splash event listeners back
+        window.addEventListener('wheel', handleSplashWheel);
+        window.addEventListener('touchstart', handleSplashTouchStart);
+        window.addEventListener('touchend', handleSplashTouchEnd);
+        window.addEventListener('keydown', handleSplashKeydown);
+    }
+
+    // Function to reset gallery to initial state
+    function resetGalleryState() {
+        prevPercentage = 0;
+        
+        // Reset track position
+        track.animate({
+            transform: `translate(-50%, 0%)`, width: '50vw', gap: '4vmin'
+        }, { duration: 300, fill: "forwards" });
+
+        // Reset image positions
+        for (const image of track.getElementsByClassName("image")) {
+            image.animate({
+                objectPosition: `50% 100%`
+            }, { duration: 300, fill: "forwards" });
+        }
+
+        // Remove dimmed class from all images
+        for (const img of images) {
+            img.classList.remove("dimmed");
+        }
+
+        // Hide all content divs
+        hideAllContentDivs();
+    }
+
+    // Add click event listener to back button
+    backToSplashBtn.addEventListener('click', backToSplash);
 
     // Mouse wheel event for splash screen
     function handleSplashWheel(e) {

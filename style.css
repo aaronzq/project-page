@@ -118,6 +118,25 @@ body {
     animation: bounce 2s infinite;
 }
 
+.navigate-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.navigate-link p {
+    color: white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #888888;
+}
+
+.navigate-link:hover {
+    transform: scale(1.05);
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -151,11 +170,33 @@ body {
     opacity: 1;
 }
 
+.back-to-splash-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
 
+.back-to-splash-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
 
-
-
-
+.back-to-splash-btn:hover {
+    color: #cccccc;
+    transform: scale(1.2);
+}
 
 #image-track {
     display: flex;
