@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.querySelector('.splash-screen');
     const mainContent = document.querySelector('.main-content');
+    const backToSplashBtn = document.getElementById('back-to-splash');
     let hasScrolled = false;
     let splashTouchStartY = 0;
     let splashTouchEndY = 0;
@@ -13,7 +14,67 @@ document.addEventListener('DOMContentLoaded', function() {
         
         splashScreen.classList.add('hidden');
         mainContent.classList.add('visible');
+        
+        // Show back button after entering main content
+        setTimeout(() => {
+            backToSplashBtn.classList.add('visible');
+        }, 500);
     }
+
+    // Function to go back to splash screen
+    function backToSplash() {
+        hasScrolled = false;
+        
+        // Hide back button
+        backToSplashBtn.classList.remove('visible');
+        
+        // Hide main content and show splash
+        mainContent.classList.remove('visible');
+        splashScreen.classList.remove('hidden');
+        
+        // Reset gallery state
+        resetGalleryState();
+        
+        // Remove gallery event listeners
+        window.removeEventListener("wheel", handleGalleryWheel);
+        window.removeEventListener("touchstart", handleGalleryTouchStart);
+        window.removeEventListener("touchmove", handleGalleryTouchMove);
+        window.removeEventListener("touchend", handleGalleryTouchEnd);
+        
+        // Add splash event listeners back
+        window.addEventListener('wheel', handleSplashWheel);
+        window.addEventListener('touchstart', handleSplashTouchStart);
+        window.addEventListener('touchend', handleSplashTouchEnd);
+        window.addEventListener('keydown', handleSplashKeydown);
+    }
+
+    // Function to reset gallery to initial state
+    function resetGalleryState() {
+        prevPercentage = 0;
+        
+        // Reset track position
+        track.animate({
+            transform: `translate(-50%, 0%)`, width: '50vw', gap: '4vmin'
+        }, { duration: 300, fill: "forwards" });
+
+        // Reset image positions
+        for (const image of track.getElementsByClassName("image")) {
+            image.animate({
+                objectPosition: `50% 100%`
+            }, { duration: 300, fill: "forwards" });
+        }
+
+        // Remove dimmed class from all images
+        for (const img of images) {
+            img.classList.remove("dimmed");
+        }
+
+        // Hide all content divs
+        hideAllContentDivs();
+    }
+
+    // Add click event listener to back button
+    backToSplashBtn.addEventListener('click', backToSplash);
 
     // Mouse wheel event for splash screen
     function handleSplashWheel(e) {
@@ -81,27 +142,37 @@ let prevPercentage = 0;
 // Content templates - stored in JS, not in HTML
 const contentTemplates = {
     'content-1': `
-        <h2>Photos of Optical Setups</h2>
-        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
-        <img src="projects/optics-photography/page1.png">
-        <p></p>
-        <img src="projects/optics-photography/page2.png">
-        <p></p>
-        <img src="projects/optics-photography/page3.png">
-        <p></p>
-        <img src="projects/optics-photography/page4.png">
-        <p></p>
-        <img src="projects/optics-photography/page5.png">
+        <h2>Photograph the Optical Setups</h2>
+        <p>I have built a number of optical setups for imaging prototypes. The priviledge of working with light is the convenience to create astonishing visuals with them.</p>
+        <p>These photographs only capture a small portion of the beauty of these setups during their daily operation. Just for fun, I arranged them in something similar to a product brochure and captioned with ChatGPT-generated nonsense in both English and Chinese.
+         Don't read, just see. </p>
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page1.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page2.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page3.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page4.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page5.png">
     `,
     'content-2': `
-        <h2>Shoot a videography of setup mocking ads</h2>
-        <p>The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that? 
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
+        <h2>Make an Ad for Lab, a Parodic Experiment</h2>
+        <p> Well, we have all seen some meaningless tech company ads portraying some "hard core science", nice vibe in the office, and their futuristic visions.
+        Typically, researchers are quickly typing in command lines, writing formulas on whiteboards, and dressing up in white, lab coats. Cliché. 
         </p>
+        <p> However they are good.
+        </p>
+        <video controls>
+            <source src="projects/optics-cinematography/optics_mock_ad_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <audio controls>
+            <source src="projects/optics-cinematography/my_voice.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio controls>
+            <source src="projects/optics-cinematography/jony_voice.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
     `,
     'content-3': `
         <h2>Project 3 Title</h2>
