@@ -142,27 +142,37 @@ let prevPercentage = 0;
 // Content templates - stored in JS, not in HTML
 const contentTemplates = {
     'content-1': `
-        <h2>Photos of Optical Setups</h2>
-        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.</p>
-        <img src="projects/optics-photography/page1.png">
-        <p></p>
-        <img src="projects/optics-photography/page2.png">
-        <p></p>
-        <img src="projects/optics-photography/page3.png">
-        <p></p>
-        <img src="projects/optics-photography/page4.png">
-        <p></p>
-        <img src="projects/optics-photography/page5.png">
+        <h2>Photograph the Optical Setups</h2>
+        <p>I have built a number of optical setups for imaging prototypes. The priviledge of working with light is the convenience to create astonishing visuals with them.</p>
+        <p>These photographs only capture a small portion of the beauty of these setups during their daily operation. Just for fun, I arranged them in something similar to a product brochure and captioned with ChatGPT-generated nonsense in both English and Chinese.
+         Don't read, just see. </p>
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page1.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page2.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page3.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page4.png">
+        <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page5.png">
     `,
     'content-2': `
-        <h2>Shoot a videography of setup mocking ads</h2>
-        <p>The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that? 
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
-            The quick brown fox jumps over the lazy dog. So what's this what's that? So what's this what's that? So what's this what's that? So what's this what's that?
+        <h2>Make an Ad for Lab, a Parodic Experiment</h2>
+        <p> Well, we have all seen some meaningless tech company ads portraying some "hard core science", nice vibe in the office, and their futuristic visions.
+        Typically, researchers are quickly typing in command lines, writing formulas on whiteboards, and dressing up in white, lab coats. Cliché. 
         </p>
+        <p> However they are good.
+        </p>
+        <video controls>
+            <source src="projects/optics-cinematography/optics_mock_ad_compressed.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <audio controls>
+            <source src="projects/optics-cinematography/my_voice.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio controls>
+            <source src="projects/optics-cinematography/jony_voice.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
     `,
     'content-3': `
         <h2>Project 3 Title</h2>
