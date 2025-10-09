@@ -154,44 +154,44 @@ const contentTemplates = {
     `,
     'content-2': `
     <h2>Make an Ad for Lab, a Parodic Experiment</h2>
-    <p>Well, we have all watched some Ads from tech company portraying their "hard core science", nice vibe, and visions. Typically, actors/actresses in the video are quickly typing in command terminal, sketching formulas on whiteboards, and dressing up in white, lab coats. Pretty cliché stuff.</p>
-    <p>Camera movement, soundtrack and a delicately-crafted narration with a magnetic voice. I think we can mock it for my lab, too. And in the age of generative AI, I can even "hire" Jony Ive (unknowingly) from one of my favourite <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a> to do some magic for me.</p>
+    <p>Well, we have all watched some Ads from tech companies, portraying their hard-core science, nice office vibe, and futuristicvisions. Actors/actresses in the video are quickly typing in command terminal, sketching formulas on whiteboards, and dressing up in white, lab coats. Pretty cliché stuff.</p>
+    <p>Key components: camera movement, soundtrack and a delicately-crafted narration with a magnetic voice. I think I can also do it, maybe with my lab. With genAI, I can even "hire" Jony Ive (unknowingly) from one of my favourite <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a> to do some magic for me.</p>
 
-    <video controls>
+
+    <video controls style="width: 100%;">
         <source src="projects/optics-cinematography/optics_mock_ad_compressed.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <p> Tools I used for the naration includes: </p>
+    <p>There are basically two types of audio tools to create the narration: 1. Text-to-Speech (TTS), and 2. Voice conversion. TTS seems convenient, however, often makes it difficult to control the intonation, pause, rhythm and the emotion, which are critical for imitating specific storytelling style, i.e. IOS 7 Official video. Therefore, I performed the narration with my own voice and convert them into Jony Ive's voice. 
+    I used <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/Anjok07/ultimatevocalremovergui">UVR5</a> to separate the vocals from the background music. <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://myedit.online/en/audio-editor">MyEdit</a> was used for online audio denoising. The xx-minute vocal sample has been cropped into xx clips and fed into Retrieval-based-Voice-Conversion <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RVC</a> for training.</p>
 
-    <div style="display: flex; flex-direction: row;">
-    <div>
-    <p style="text-align: center;">My voice</p>
-    <p><audio controls>
-        <source src="projects/optics-cinematography/my_voice.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio></p>
+    <div class="audio-container" style="width: 100%; display:flex; flex-direction: row;">
+        <div style="text-align: center; width: 50%;">
+            <p style="text-align: center;">My voice</p>
+            <audio controls style="width: 90%;">
+                <source src="projects/optics-cinematography/my_voice.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div style="text-align: center; width: 50%;">
+            <p style="text-align: center;">Jony Ive's voice</p>
+            <audio controls style="width: 90%;">
+                <source src="projects/optics-cinematography/jony_voice.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
-
-    <div>
-    <p style="text-align: center;">Jony Ive's voice</p>   
-    <p><audio controls>
-        <source src="projects/optics-cinematography/jony_voice.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio></p>
-    </div>
-
-    </div>
-    <p>Additional content here.</p>
-
     `,
     'content-3': `
-        <h2>Project 3 Title</h2>
+        <h2>Web App for Optics Schematics Drawing</h2>
+        <p>Coding with LLMs (Claude Sonnet 4 and GPT-4.1), I developed a website <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.schemabuild.xyz/">www.schemabuild.xyz</a> for online optics schematics drawing. A small <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.reddit.com/r/Optics/comments/1n4e04t/a_web_app_for_drawing_simple_optical_schematics/">discussion</a> on reddit. </p>
         <video controls>
             <source src="projects/optics-schematics-builder/Demo_fast_short.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <p>This is the content for project 3. You can include images, text, videos, or any other HTML elements here.</p>
+        
     `,
 };
 
