@@ -145,7 +145,7 @@ const contentTemplates = {
         <h2>Photograph the Optical Setups</h2>
         <p>I have built a number of optical setups for imaging prototypes. The priviledge of working with light is the convenience to create astonishing visuals with them.</p>
         <p>These photographs only capture a small portion of the beauty of these setups during their daily operation. Just for fun, I arranged them in something similar to a product brochure and captioned with ChatGPT-generated nonsense in both English and Chinese.
-         Don't read, just see. </p>
+         Don't read, just feel it. </p>
         <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page1.png">
         <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page2.png">
         <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page3.png">
@@ -153,25 +153,36 @@ const contentTemplates = {
         <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page5.png">
     `,
     'content-2': `
-        <h2>Make an Ad for Lab, a Parodic Experiment</h2>
-        <p> Well, we have all seen some meaningless tech company ads portraying some "hard core science", nice vibe in the office, and their futuristic visions.
-        Typically, researchers are quickly typing in command lines, writing formulas on whiteboards, and dressing up in white, lab coats. Cliché. 
-        </p>
-        <p> However they are good.
-        </p>
-        <video controls>
-            <source src="projects/optics-cinematography/optics_mock_ad_compressed.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <h2>Make an Ad for Lab, a Parodic Experiment</h2>
+    <p>Well, we have all watched some Ads from tech company portraying their "hard core science", nice vibe, and visions. Typically, actors/actresses in the video are quickly typing in command terminal, sketching formulas on whiteboards, and dressing up in white, lab coats. Pretty cliché stuff.</p>
+    <p>Camera movement, soundtrack and a delicately-crafted narration with a magnetic voice. I think we can mock it for my lab, too. And in the age of generative AI, I can even "hire" Jony Ive (unknowingly) from one of my favourite <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a> to do some magic for me.</p>
 
-        <audio controls>
-            <source src="projects/optics-cinematography/my_voice.m4a" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls>
-            <source src="projects/optics-cinematography/jony_voice.wav" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <video controls>
+        <source src="projects/optics-cinematography/optics_mock_ad_compressed.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p> Tools I used for the naration includes: </p>
+
+    <div style="display: flex; flex-direction: row;">
+    <div>
+    <p style="text-align: center;">My voice</p>
+    <p><audio controls>
+        <source src="projects/optics-cinematography/my_voice.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio></p>
+    </div>
+
+    <div>
+    <p style="text-align: center;">Jony Ive's voice</p>   
+    <p><audio controls>
+        <source src="projects/optics-cinematography/jony_voice.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio></p>
+    </div>
+
+    </div>
+    <p>Additional content here.</p>
 
     `,
     'content-3': `
