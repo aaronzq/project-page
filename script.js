@@ -153,9 +153,9 @@ const contentTemplates = {
         <img style="border: 2px solid rgba(255, 255, 255, 0.2);width: 60%" src="projects/optics-photography/page5.png">
     `,
     'content-2': `
-    <h2>Make an Ad for Lab, a Parodic Experiment</h2>
-    <p>Well, we have all watched some Ads from tech companies, portraying their hard-core science, nice office vibe, and futuristicvisions. Actors/actresses in the video are quickly typing in command terminal, sketching formulas on whiteboards, and dressing up in white, lab coats. Pretty cliché stuff.</p>
-    <p>Key components: camera movement, soundtrack and a delicately-crafted narration with a magnetic voice. I think I can also do it, maybe with my lab. With genAI, I can even "hire" Jony Ive (unknowingly) from one of my favourite <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a> to do some magic for me.</p>
+    <h2>Make a commercial for the Lab</h2>
+    <p>A mock-up of tech company cliché advertisement video. Slow camera movements, up-beat soundtrack and a narration with ambiguous over-exaggerations in a magnetic voice.</p>
+    <p>With generative AI, I can borrow the magical voice of Jony Ive (unknowingly) from one of my favourite Apple <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a>. I miss those days.</p>
 
 
     <video controls style="width: 100%;">
@@ -163,9 +163,8 @@ const contentTemplates = {
         Your browser does not support the video tag.
     </video>
 
-    <p>There are basically two types of audio tools to create the narration: 1. Text-to-Speech (TTS), and 2. Voice conversion. TTS seems convenient, however, often makes it difficult to control the intonation, pause, rhythm and the emotion, which are critical for imitating specific storytelling style, i.e. IOS 7 Official video. Therefore, I performed the narration with my own voice and convert them into Jony Ive's voice. 
-    I used <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/Anjok07/ultimatevocalremovergui">UVR5</a> to separate the vocals from the background music. <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://myedit.online/en/audio-editor">MyEdit</a> was used for online audio denoising. The xx-minute vocal sample has been cropped into xx clips and fed into Retrieval-based-Voice-Conversion <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RVC</a> for training.</p>
-
+    <p>There are basically two approaches to create the narration with someone's voice: 1. Text-to-Speech (TTS), and 2. Voice conversion. TTS sounds convenient, however, is not often easy to control the intonation, pause, rhythm and emotion, which are critical for imitating specific storytelling style, e.g. Jony's style. Therefore, I chose to perform the narration with my own voice and convert them later. </p> 
+    
     <div class="audio-container" style="width: 100%; display:flex; flex-direction: row;">
         <div style="text-align: center; width: 50%;">
             <p style="text-align: center;">My voice</p>
@@ -183,16 +182,51 @@ const contentTemplates = {
             </audio>
         </div>
     </div>
+
+    <p> The training dataset was collected from this <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">commercial</a>. <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/Anjok07/ultimatevocalremovergui">UVR5</a> separated the vocals from the background music. <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://myedit.online/en/audio-editor">MyEdit</a> was used for audio denoising. The eight-minute vocal sample has been cropped into 430 clips and fed into Retrieval-based-Voice-Conversion <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RVC</a> for model fine-tuning. And then the network converts my voice recording into someone else's voice.</p>
+
+    <p> There are two shots in this commercial that were created by a text-to-video AI by <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://runwayml.com/">runway</a>.
+
     `,
     'content-3': `
         <h2>Web App for Optics Schematics Drawing</h2>
-        <p>Coding with LLMs (Claude Sonnet 4 and GPT-4.1), I developed a website <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.schemabuild.xyz/">www.schemabuild.xyz</a> for online optics schematics drawing. A small <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.reddit.com/r/Optics/comments/1n4e04t/a_web_app_for_drawing_simple_optical_schematics/">discussion</a> on reddit. </p>
+        <p>I developed a website <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.schemabuild.xyz/">www.schemabuild.xyz</a> for online optics schematics drawing. A small <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.reddit.com/r/Optics/comments/1n4e04t/a_web_app_for_drawing_simple_optical_schematics/">discussion</a> can be found on reddit. </p>
+        <p>The project was built in vanilla javascript with HTML5 canvas, which I honestly know very little about. I worked with LLMs (Claude Sonnet 4 and GPT-4.1) and plan to improve it bit by bit in the future to make it a BioRender for Optics. </p>
         <video controls>
             <source src="projects/optics-schematics-builder/Demo_fast_short.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
     `,
+
+    'content-4': `
+        <h2>I took some photos during travel</h2>
+        <img style="width: 80%" src="projects/just-photography/IMG_9249-Enhanced-NR-2-Edit.jpg">
+        <p> </p>
+        <img style="width: 60%" src="projects/just-photography/IMG_8865-Enhanced-NR.jpg">
+        <p> </p>
+        <img style="width: 80%" src="projects/just-photography/IMG_9241.jpg">
+    `,
+
+    'content-5': `
+        <h2>Make my own GBA with a Raspberry Pi</h2>
+    `,
+
+    'content-6': `
+        <h2>Miniature Photography</h2>
+        <p>I have been an anime and game fan and was very into taking photos for hand-crafted and 3D printed models. </p>
+        <img style="width: 80%" src="projects/miniature-photography/IMG_0752.JPG">
+        <p> </p>
+        <img style="width: 60%" src="projects/miniature-photography/IMG_0751.JPG">
+        <p> </p>
+        <img style="width: 60%" src="projects/miniature-photography/IMG_0750.JPG">
+        <p> </p>
+        <img style="width: 80%" src="projects/miniature-photography/IMG_0748.JPG">
+        <p> </p>
+        <img style="width: 80%" src="projects/miniature-photography/IMG_0749.JPG">
+
+        
+    `
 };
 
 // Track which content has been loaded to avoid reloading

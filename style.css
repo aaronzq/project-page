@@ -228,7 +228,7 @@ body {
     top: 55%;
     transform: translateY(-50%);
     width: 70vw;
-    height: 90vh;
+    height: 80vh;
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -288,6 +288,7 @@ body {
 }
 
 .content-display p {
+    width: 100%;
     color: #dcdcdc;
     text-align: justify;
     font-family: 'Helvetica Neue', Arial, sans-serif;
