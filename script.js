@@ -210,11 +210,12 @@ const contentTemplates = {
 
     'content-5': `
         <h2>Make my own GBA with a Raspberry Pi</h2>
+        <p>Check this <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.bilibili.com/video/BV14P41177a7/?share_source=copy_web&vd_source=d910d795a15c2b1c3eaf394ffeee2b52">Video</a>!</p>
     `,
 
     'content-6': `
         <h2>Miniature Photography</h2>
-        <p>I have been an anime and game fan and was very into taking photos for hand-crafted and 3D printed models. </p>
+        <p>I have been an ACG boy and was very into taking photos for assembled and 3D printed models from animes and games. </p>
         <img style="width: 80%" src="projects/miniature-photography/IMG_0752.JPG">
         <p> </p>
         <img style="width: 60%" src="projects/miniature-photography/IMG_0751.JPG">
