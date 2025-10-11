@@ -155,7 +155,7 @@ const contentTemplates = {
     'content-2': `
     <h2>Make a commercial for the Lab</h2>
     <p>A mock-up of tech company cliché advertisement video. Slow camera movements, up-beat soundtrack and a narration with ambiguous over-exaggerations in a magnetic voice.</p>
-    <p>With generative AI, I can borrow the magical voice of Jony Ive (unknowingly) from one of my favourite Apple <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a>. I miss those days.</p>
+    <p>With generative AI, I can borrow the magical voice of Jony Ive (unknowingly) from one of my favourite Apple <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.youtube.com/watch?v=4xzLr7xSr-g">Ads</a>. (I miss those old trailers.)</p>
 
 
     <video controls style="width: 100%;">
@@ -189,9 +189,10 @@ const contentTemplates = {
 
     `,
     'content-3': `
-        <h2>Web App for Optics Schematics Drawing</h2>
-        <p>I developed a website <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.schemabuild.xyz/">www.schemabuild.xyz</a> for online optics schematics drawing. A small <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.reddit.com/r/Optics/comments/1n4e04t/a_web_app_for_drawing_simple_optical_schematics/">discussion</a> can be found on reddit. </p>
-        <p>The project was built in vanilla javascript with HTML5 canvas, which I honestly know very little about. I worked with LLMs (Claude Sonnet 4 and GPT-4.1) and plan to improve it bit by bit in the future to make it a BioRender for Optics. </p>
+        <h2>Web App for Optical Schematic Drawing</h2>
+        <p>I developed a website <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.schemabuild.xyz/">www.schemabuild.xyz</a> for optical schematic drawing. Within minutes, users can create beautiful 2D system diagrams with lens, mirrors, gratings, etc. with colorful ray illustrations. The drawing can be exported in SVG to other commercial programs, such as Microsoft PowerPoint and Adobe Illustrator, for further editing or integration with other figures. A small <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.reddit.com/r/Optics/comments/1n4e04t/a_web_app_for_drawing_simple_optical_schematics/">discussion</a> can be found on reddit. </p>
+        <p>The project has been an exciting attempt to build a web tool almost entirely by LLM copilots (Claude Sonnet 4 and GPT-4.1). I used only vanilla javascript with HTML5 canvas and open-sourced it on <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://github.com/aaronzq/schematics-builder">Github</a>. This project is still under active development. With a larger component library, more interactive editing features, let's build it into a Optical <a style="color: rgb(255, 255, 255); text-decoration: underline;" href="https://www.biorender.com/">BioRender</a>. </p>
+        
         <video controls>
             <source src="projects/optics-schematics-builder/Demo_fast_short.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -200,7 +201,7 @@ const contentTemplates = {
     `,
 
     'content-4': `
-        <h2>I took some photos during travel</h2>
+        <h2>Long exposure photography</h2>
         <img style="width: 80%" src="projects/just-photography/IMG_9249-Enhanced-NR-2-Edit.jpg">
         <p> </p>
         <img style="width: 60%" src="projects/just-photography/IMG_8865-Enhanced-NR.jpg">
